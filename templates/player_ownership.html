@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<div class="tab">
+  <button class="tablinks" onclick="">Player Ownership in Winning Lineups</button>
+  <button class="tablinks" onclick="">Lineup Generator Based on Team Exposures</button>
+
+</div>
+
+<!-- Tab content -->
+<div id="Content" class="tabcontent">
+ <form>
+  <label for="Value">Value Threshold (%):</label>
+     <br><input type="text" id="Value" name="Value"><br>
+     <input type="submit" value="Submit">
+</form>
+<table style="table-layout:fixed">
+<tr>
+<th>P1 P2 C 1B 2B 3B SS OF1 OF2 OF3</th>
+</tr>
+  {% for i, r in dataframe.iterrows %}
+    <tr>
+      <td>{{ r.P1 }}</td>
+      <td>{{ r.P2 }}</td>
+      <td>{{ r.C }}</td>
+      <td>{{ r.First_Base }}</td>
+      <td>{{ r.Second_Base }}</td>
+      <td>{{ r.Third_Base }}</td>
+      <td>{{ r.SS }}</td>
+      <td>{{ r.OF1 }}</td>
+      <td>{{ r.OF2 }}</td>
+      <td>{{ r.OF3 }}</td>
+    </tr>
+  {% endfor %}
+</table>
+</div>
+
