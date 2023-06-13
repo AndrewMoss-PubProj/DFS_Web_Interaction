@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def home_view(request):
-    data = pd.read_csv('/home/andrewmoss/PycharmProjects/djangoProject/djangoProject/Usable_Lineups.csv')
+    data = pd.read_csv('/home/andrewmoss/PycharmProjects/djangoProject/static/Usable_Lineups.csv')
     context = {
         'dataframe': data
     }

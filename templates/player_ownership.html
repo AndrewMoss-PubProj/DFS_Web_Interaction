@@ -1,10 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 
 <html lang="en">
+<head>
+      <title>Player Ownership in Winning Lineups</title>
+      <link rel="stylesheet" type="text/css" href="{% static '/table.css' %}">
+</head>
 
 <div class="tab">
-  <button class="tablinks" onclick="">Player Ownership in Winning Lineups</button>
-  <button class="tablinks" onclick="">Lineup Generator Based on Team Exposures</button>
+  <a class="tablinks" href="player_ownership.html">Player Ownership in Winning Lineups</a>
+  <a class="tablinks" href="Lineups_team_exposure_caps.html">Lineup Generator Based on Team Exposures</a>
 
 </div>
 
@@ -17,10 +23,19 @@
 </form>
 <table style="table-layout:fixed">
 <tr>
-<th>P1 P2 C 1B 2B 3B SS OF1 OF2 OF3</th>
+    <th>P1 </th>
+    <th>P2 </th>
+    <th>C </th>
+    <th>1B </th>
+    <th>2B </th>
+    <th>3B </th>
+    <th>SS </th>
+    <th>OF1 </th>
+    <th>OF2 </th>
+    <th>OF3 </th>
 </tr>
   {% for i, r in dataframe.iterrows %}
-    <tr>
+    <tr class="{% cycle 'odd' 'even' %}">
       <td>{{ r.P1 }}</td>
       <td>{{ r.P2 }}</td>
       <td>{{ r.C }}</td>
